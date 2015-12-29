@@ -1,17 +1,9 @@
-//FORBIDDEN java.util
-
 /**
  * This class encapsulates a basic music
  * library. It uses a binary search tree to store
  * albums. It's like a TreeMap. The key into the tree 
  * is a String, the name of the album. The value is
  * the actual album itself.
- * 
- * You must implement a binary search tree in order
- * to get any credit for this homework. You may not 
- * use data structures from the jcf to complete this
- * class. You may not add additional instance variables
- * to this class. 
  */
 public class MusicLibrary
 {
@@ -26,7 +18,7 @@ public class MusicLibrary
 	}
 	
 	/**
-	 * addAlbum. Add an album to the tree.
+	 * Add an album to the tree.
 	 * Use a recursive helper method. The albums
 	 * in the tree should be ordered based on
 	 * the name of the album, NOT the artist.
@@ -36,7 +28,6 @@ public class MusicLibrary
 	public void addAlbum(AlbumNode a)
 	{
 		AlbumNode newNode = new AlbumNode(a.getArtist(), a.getName()); 
-		
 		if (root != null) 
 		{ 
 			addAlbum(root, newNode); 
@@ -46,11 +37,13 @@ public class MusicLibrary
 			root = newNode;
 		}
 	}
+	/**
+	 * Add the node to the album
+	 */
 	public void addAlbum(AlbumNode latestRoot ,AlbumNode a)
 	{
 		if(a.getName().compareTo(latestRoot.getName()) < 0)
 		{
-			
 			if (latestRoot.left != null) 
 			{ 
 				addAlbum(latestRoot.left, a);
@@ -72,8 +65,9 @@ public class MusicLibrary
 			}
 		}
 	}
+	
 	/**
-	 * getAlbum. Return an Album from the tree
+	 * Return an Album from the tree
 	 * if it exists, or null otherwise.
 	 * Use a recursive helper method.
 	 * 
@@ -113,7 +107,7 @@ public class MusicLibrary
 	}
 	
 	/**
-	 * count. Return the size of the library. Use
+	 * Return the size of the library. Use
 	 * a recursive helper method.
 	 * 
 	 * @return an int
@@ -138,7 +132,7 @@ public class MusicLibrary
 	}
 	
 	/**
-	 * printInOrder. Print the list of albums
+	 * Print the list of albums
 	 * in the MusicLibrary in order based on name.
 	 * Print each album on its own line.
 	 * Use a recursive helper method. Use the
@@ -147,7 +141,7 @@ public class MusicLibrary
 	 */
 	public void printInOrder()
 	{
-	printInOrder(root);
+		printInOrder(root);
 	}
 	private static void printInOrder(AlbumNode node)
 	{
@@ -164,7 +158,7 @@ public class MusicLibrary
 	}
 	
 	/**
-	 * printInReverseOrder. Print the list of albums
+	 * Print the list of albums
 	 * in the MusicLibrary in reverse order based on name.
 	 * Use a recursive helper method.
 	 */
