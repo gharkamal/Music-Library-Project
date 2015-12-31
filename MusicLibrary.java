@@ -1,4 +1,5 @@
 /**
+ * @author Harkamal Grewal
  * This class encapsulates a basic music
  * library. It uses a binary search tree to store
  * albums. It's like a TreeMap. The key into the tree 
